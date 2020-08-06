@@ -1,3 +1,6 @@
+import numpy as np
+from statistics import mean 
+
 '''
 Stages of individuals in SEIR model:
      0 SUSCEPTIBLE
@@ -17,9 +20,6 @@ Initial parameters
 # Spreading period length
 SPREAD_DURATION = 100
 
-# Initial input of the city
-SCALE = 1000 # scale
-
 # Initial population of each stage
 INFECTED_2_0 = 0
 INFECTED_3_0 = 0
@@ -33,9 +33,13 @@ Clinical parameters
 '''
 
 # Duration parameters
-INCUBATION_PERIOD = 14 # duration of incubation period
+INCUBATION_PERIOD_MEAN = 4.6 
+INCUBATION_PERIOD_SD = 4.4
+INCUBATION_PERIOD = mean(np.random.normal(INCUBATION_PERIOD_MEAN, INCUBATION_PERIOD_SD,1000))
+
+# duration of incubation period
 MILD_PERIOD = 6 # duration of mild infection
-OBVIOUS_PERIOD = 8 # duration of obvious infection
+OBVIOUS_PERIOD = 6 # duration of obvious infection
 CRITICAL_PERIOD = 8 # duration of critical infection
 
 PERCENT_CRITICAL = 0.05 # Percentage of critical cases in all cases confirmed

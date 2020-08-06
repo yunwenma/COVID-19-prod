@@ -43,7 +43,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         html.P("Type in the population and the initial infectious case number:"),
         dcc.Input(id="input1", type="text", placeholder="Population", value=100, min=20, max=10000, step=1),
         # Input 2 - initial infectious case number
-        dcc.Input(id="input2", type="text", placeholder="Initial Infectious case", value = 5, min=0, max=100, step=1, debounce=True), 
+        dcc.Input(id="input2", type="text", placeholder="Initial Infectious case", value = 1, min=0, max=100, step=1, debounce=True), 
         html.Br(),     
         # Input 3.... 
         ]
